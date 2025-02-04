@@ -1,14 +1,19 @@
 import requests
-import random
+import time
 import os
 import USERS
 
+os.getenv('OMP_NUM_THREADS', 5)
 def clear_terminal():
     if os.name == 'nt': 
         os.system('cls')
     else:
         os.system('clear')
-
+delay = 0.1
+def print_slow(text, d=delay):
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(d)
 # Regular Colors
 BL = "\033[0;100m" # Black
 R = "\033[0;101m" # Red
@@ -30,60 +35,60 @@ w = "\033[1;37m" # White
 
 
 clear_terminal()
-print(f"""{W}
-  {R}<!-- ╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗ -->{W}  
-  {B}<!-- ╠╬╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╬╣ -->{W}  
-  {R}<!-- ╠╣ .d8888. .88b  d88. ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88'  YP 88'YbdP`88 ╠╣ -->{W}  
-  {R}<!-- ╠╣ `8bo.   88  88  88 ╠╣ -->{W}  
-  {B}<!-- ╠╣   `Y8b. 88  88  88 ╠╣ -->{W}  
-  {R}<!-- ╠╣ db   8D 88  88  88 ╠╣ -->{W}  
-  {B}<!-- ╠╣ `8888Y' YP  YP  YP ╠╣ -->{W}  
-  {R}<!-- ╠╣                    ╠╣ -->{W}  
-  {B}<!-- ╠╣                    ╠╣ -->{W}  
-  {R}<!-- ╠╣ .d8888.            ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88'  YP            ╠╣ -->{W}  
-  {R}<!-- ╠╣ `8bo.              ╠╣ -->{W}  
-  {B}<!-- ╠╣   `Y8b.            ╠╣ -->{W}  
-  {R}<!-- ╠╣ db   8D            ╠╣ -->{W}  
-  {B}<!-- ╠╣ `8888Y'            ╠╣ -->{W}  
-  {Y}<!-- ╠╣                    ╠╣ -->{W}  
-  {Y}<!-- ╠╣                    ╠╣ -->{W}  
-  {Y}<!-- ╠╣ github => Raoof007 ╠╣ -->{W}  
-  {Y}<!-- ╠╣                    ╠╣ -->{W}  
-  {Y}<!-- ╠╣                    ╠╣ -->{W}  
-  {R}<!-- ╠╣ d8888b.  .d88b.    ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88  `8D .8P  Y8.   ╠╣ -->{W}  
-  {R}<!-- ╠╣ 88oooY' 88    88   ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88~~~b. 88    88   ╠╣ -->{W}  
-  {R}<!-- ╠╣ 88   8D `8b  d8'   ╠╣ -->{W}  
-  {B}<!-- ╠╣ Y8888P'  `Y88P'    ╠╣ -->{W}  
-  {R}<!-- ╠╣                    ╠╣ -->{W}  
-  {B}<!-- ╠╣                    ╠╣ -->{W}  
-  {R}<!-- ╠╣ .88b  d88. d8888b. ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88'YbdP`88 88  `8D ╠╣ -->{W}  
-  {R}<!-- ╠╣ 88  88  88 88oooY' ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88  88  88 88~~~b. ╠╣ -->{W}  
-  {R}<!-- ╠╣ 88  88  88 88   8D ╠╣ -->{W}  
-  {B}<!-- ╠╣ YP  YP  YP Y8888P' ╠╣ -->{W}  
-  {R}<!-- ╠╣                    ╠╣ -->{W}  
-  {B}<!-- ╠╣                    ╠╣ -->{W}  
-  {R}<!-- ╠╣ d88888b d8888b.    ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88'     88  `8D    ╠╣ -->{W}  
-  {R}<!-- ╠╣ 88ooooo 88oobY'    ╠╣ -->{W}  
-  {B}<!-- ╠╣ 88~~~~~ 88`8b      ╠╣ -->{W}  
-  {R}<!-- ╠╣ 88.     88 `88.    ╠╣ -->{W}  
-  {B}<!-- ╠╣ Y88888P 88   YD    ╠╣ -->{W}  
-  {R}<!-- ╠╬╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╬╣ -->{W}  
-  {B}<!-- ╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝ -->{W}  
-\n{w}{P}
-""")
+# print_slow(f"""{W}
+#   {R}<!-- ╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗ -->{W}  
+#   {B}<!-- ╠╬╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╬╣ -->{W}  
+#   {R}<!-- ╠╣ .d8888. .88b  d88. ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88'  YP 88'YbdP`88 ╠╣ -->{W}  
+#   {R}<!-- ╠╣ `8bo.   88  88  88 ╠╣ -->{W}  
+#   {B}<!-- ╠╣   `Y8b. 88  88  88 ╠╣ -->{W}  
+#   {R}<!-- ╠╣ db   8D 88  88  88 ╠╣ -->{W}  
+#   {B}<!-- ╠╣ `8888Y' YP  YP  YP ╠╣ -->{W}  
+#   {R}<!-- ╠╣                    ╠╣ -->{W}  
+#   {B}<!-- ╠╣                    ╠╣ -->{W}  
+#   {R}<!-- ╠╣ .d8888.            ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88'  YP            ╠╣ -->{W}  
+#   {R}<!-- ╠╣ `8bo.              ╠╣ -->{W}  
+#   {B}<!-- ╠╣   `Y8b.            ╠╣ -->{W}  
+#   {R}<!-- ╠╣ db   8D            ╠╣ -->{W}  
+#   {B}<!-- ╠╣ `8888Y'            ╠╣ -->{W}  
+#   {Y}<!-- ╠╣                    ╠╣ -->{W}  
+#   {Y}<!-- ╠╣                    ╠╣ -->{W}  
+#   {Y}<!-- ╠╣ github => Raoof007 ╠╣ -->{W}  
+#   {Y}<!-- ╠╣                    ╠╣ -->{W}  
+#   {Y}<!-- ╠╣                    ╠╣ -->{W}  
+#   {R}<!-- ╠╣ d8888b.  .d88b.    ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88  `8D .8P  Y8.   ╠╣ -->{W}  
+#   {R}<!-- ╠╣ 88oooY' 88    88   ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88~~~b. 88    88   ╠╣ -->{W}  
+#   {R}<!-- ╠╣ 88   8D `8b  d8'   ╠╣ -->{W}  
+#   {B}<!-- ╠╣ Y8888P'  `Y88P'    ╠╣ -->{W}  
+#   {R}<!-- ╠╣                    ╠╣ -->{W}  
+#   {B}<!-- ╠╣                    ╠╣ -->{W}  
+#   {R}<!-- ╠╣ .88b  d88. d8888b. ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88'YbdP`88 88  `8D ╠╣ -->{W}  
+#   {R}<!-- ╠╣ 88  88  88 88oooY' ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88  88  88 88~~~b. ╠╣ -->{W}  
+#   {R}<!-- ╠╣ 88  88  88 88   8D ╠╣ -->{W}  
+#   {B}<!-- ╠╣ YP  YP  YP Y8888P' ╠╣ -->{W}  
+#   {R}<!-- ╠╣                    ╠╣ -->{W}  
+#   {B}<!-- ╠╣                    ╠╣ -->{W}  
+#   {R}<!-- ╠╣ d88888b d8888b.    ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88'     88  `8D    ╠╣ -->{W}  
+#   {R}<!-- ╠╣ 88ooooo 88oobY'    ╠╣ -->{W}  
+#   {B}<!-- ╠╣ 88~~~~~ 88`8b      ╠╣ -->{W}  
+#   {R}<!-- ╠╣ 88.     88 `88.    ╠╣ -->{W}  
+#   {B}<!-- ╠╣ Y88888P 88   YD    ╠╣ -->{W}  
+#   {R}<!-- ╠╬╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╬╣ -->{W}  
+#   {B}<!-- ╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝ -->{W}  
+# \n{w}{P}
+# """,0.02)
 
 
 def CALL_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For CALL BOMBER : \n  For example : 09123456789 \n  $-")
     CALL = input(F"\n\nEnter Nomber Send CALL : ")
-    print("\n!!For Stop enter ctrl+C !!\n")
+    print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
     for i in range(int(int(CALL))):
         ############################### tetherland ###############################
         headers = {
@@ -155,7 +160,7 @@ def CALL_BOMBER():
 def SMS_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For SMS BOMBER : \n  For example : 09123456789 \n  $-")
     SMS = input(F"\n\nEnter Nomber Send SMS : ")
-    print("\n!!For Stop enter ctrl+C !!\n")
+    print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
     for i in range(int(int(SMS))):
         ############################### shabdiz ###############################
         headers = {'User-Agent': USERS.r_ua(),'Accept': '*/*','Accept-Language': 'en-US,en;q=0.5',
@@ -433,7 +438,7 @@ def SMS_BOMBER():
 def Both_BOMBER():
     Phone_NOMBER = input(F"{g}Enter Nomber For SMS and CALL BOMBER : \n  For example : 09123456789 \n  $-")
     Both = input(F"\n\nEnter Nomber Send SMS and CALL : ")
-    print("\n!!For Stop enter ctrl+C !!\n")
+    print_slow("\n!!For Stop enter ctrl+C !!\n",0.3)
     for i in range(int(int(Both))):
         ############################### tetherland CALL###############################
         headers = {
@@ -548,37 +553,68 @@ def Both_BOMBER():
         if response.status_code == 200 : print(f"{G}{r}SEND CALL :)")
         else : print(f"{R}{w}NOT SEND CALL :(")
 
+def TEL_BOMBER():
+    print_slow("This section is under construction.\n",0.3)
+    input("enter 01010110001")
+    print("\n\nn\n\n")
+    main()
+
+
 def SEE_WE():
-    print(f"""\n\n\n\n\n\n\n
+    print_slow(f"""\n\n\n\n\n\n\n
 {R}{g}Black Cactus Hacking Group
 {Y}{bl}🌐🏴‍☠HACKERS_WORLED
 A channel for education - news - tricks - hacking - Kali and Termux tools
 With support for three languages: English, Persian and Arabic
 
 {B}Telegram ->\n {R}{y}@Grup_Hacking_Cactus_Black
-{B}YouTube  ->\n {R}{y}@Grup_Hacking_Cactus_Black\n""")
+{B}YouTube  ->\n {R}{y}@Grup_Hacking_Cactus_Black\n""",0.01)
     input("enter 01010110001")
+    print("\n\nn\n\n")
     main()
 
 def main():
-    print(f"""
-    Hello
-    Welcome to the tool to harass friends and teachers
-    Tools in this pack:
-    {G}[1]{P} : {g}Call Bomber{w}
-    {G}[2]{P} : {g}SMS Bomber{w}
-    {G}[3]{P} : {g}Both{w}
-    {G}[4]{P} : {g}Contact Us{w}
-    {G}[5]{P} : {g}Exit{w}
+    while True:
+        clear_terminal()
+        print_slow(f"""{P}
+        Hello
+        Welcome to the tool to harass friends and teachers
+        Tools in this pack:
+        {G}[1]{P} : {g}Call Bomber{w}
+        {G}[2]{P} : {g}SMS Bomber{w}
+        {G}[3]{P} : {g}Both{w}
+        {G}[4]{P} : {g}TELEGRAM BOMBER{w}
+        {G}[5]{P} : {g}Contact Us{w}
 
-    {R}{g}**This tool is free and designed by the Black Cactus hacking group**{w}{P}
-    """)
-    USE_OF = input(f"{R}Terminal\n   $-> {R}")
-    if USE_OF == 1 : CALL_BOMBER()
-    if USE_OF == 2 : SMS_BOMBER()
-    if USE_OF == 3 : Both_BOMBER()
-    if USE_OF == 4 : SEE_WE()
-    if USE_OF == 5 : exit()
+        {G}[0]{P} : {g}Exit{w}
+
+        {R}{g}**This tool is free and designed by the Black Cactus hacking group**{w}{P}
+        """,0.002)
+        try:
+            USE_OF = int(input(f"{R}Terminal\n  write a number for start tool \n $-> {R}"))
+            if USE_OF == 0:
+                clear_terminal()
+                exit()
+            elif USE_OF == 1:
+                clear_terminal()
+                CALL_BOMBER()
+            elif USE_OF == 2:
+                clear_terminal()
+                SMS_BOMBER()
+            elif USE_OF == 3:
+                clear_terminal()
+                Both_BOMBER()
+            elif USE_OF == 4:
+                clear_terminal()
+                TEL_BOMBER()
+            elif USE_OF == 5:
+                clear_terminal()
+                SEE_WE()
+            else:
+                clear_terminal()
+                print("Invalid option. Please enter a number between 1 and 5.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 
 
 main()
